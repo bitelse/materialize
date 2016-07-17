@@ -59,11 +59,13 @@ module.exports = function(grunt) {
       },
       dist: {
         // the files to concatenate
-        src: ["js/jquery.easing.1.3.js",
+        src: [
+              "js/jquery.easing.1.3.js",
               "js/animation.js",
               "js/velocity.min.js",
               "js/hammer.min.js",
               "js/jquery.hammer.js",
+              "js/global.js",
               "js/collapsible.js",
               "js/dropdown.js",
               "js/leanModal.js",
@@ -83,18 +85,20 @@ module.exports = function(grunt) {
               "js/transitions.js",
               "js/scrollFire.js",
               "js/date_picker/picker.js",
-              "js/date_picker/picker.date.js",
+              "js/date_picker/picker.date.js"
              ],
         // the location of the resulting JS file
         dest: 'dist/js/materialize.js'
       },
       temp: {
         // the files to concatenate
-        src: ["js/jquery.easing.1.3.js",
+        src: [
+              "js/jquery.easing.1.3.js",
               "js/animation.js",
               "js/velocity.min.js",
               "js/hammer.min.js",
               "js/jquery.hammer.js",
+              "js/global.js",
               "js/collapsible.js",
               "js/dropdown.js",
               "js/leanModal.js",
@@ -114,7 +118,7 @@ module.exports = function(grunt) {
               "js/transitions.js",
               "js/scrollFire.js",
               "js/date_picker/picker.js",
-              "js/date_picker/picker.date.js",
+              "js/date_picker/picker.date.js"
              ],
         // the location of the resulting JS file
         dest: 'temp/js/materialize.js'
@@ -124,9 +128,11 @@ module.exports = function(grunt) {
 //  Uglify
     uglify: {
       options: {
+        // Use these options when debugging
+        // mangle: false,
+        // compress: false,
+        // beautify: true
 
-        // the banner is inserted at the top of the output
-//        banner: '/*! <%= pkg.name %> <%= grunt.template.today("dd-mm-yyyy") %> */\n'
       },
       dist: {
         files: {
@@ -169,6 +175,7 @@ module.exports = function(grunt) {
               "velocity.min.js",
               "hammer.min.js",
               "jquery.hammer.js",
+              "global.js",
               "collapsible.js",
               "dropdown.js",
               "leanModal.js",

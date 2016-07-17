@@ -12,8 +12,7 @@
       inDuration: 300,
       outDuration: 225,
       constrain_width: true, // Constrains width of dropdown to the activator
-      hover: true,
-      alignment: 'left',
+      hover: false,
       gutter: 0, // Spacing from edge
       belowOrigin: false
     }
@@ -26,16 +25,14 @@
     var activates = $("#"+ origin.attr('data-activates'));
 
     function updateOptions() {
-      if (origin.data('inDuration') != undefined)
+      if (origin.data('induration') != undefined)
         options.inDuration = origin.data('inDuration');
-      if (origin.data('outDuration') != undefined)
+      if (origin.data('outduration') != undefined)
         options.outDuration = origin.data('outDuration');
       if (origin.data('constrainwidth') != undefined)
         options.constrain_width = origin.data('constrainwidth');
       if (origin.data('hover') != undefined)
         options.hover = origin.data('hover');
-      if (origin.data('alignment') != undefined)
-        options.alignment = origin.data('alignment');
       if (origin.data('gutter') != undefined)
         options.gutter = origin.data('gutter');
       if (origin.data('beloworigin') != undefined)
@@ -67,10 +64,14 @@
       if (options.belowOrigin == true) {
         offset = origin.height();
       }
+
       // Handle edge alignment
+      var offsetLeft = origin.offset().left;
+
       var width_difference = 0;
       var gutter_spacing = options.gutter;
-      if (options.alignment == 'right') {
+
+      if (offsetLeft + activates.innerWidth() > $(window).width()) {
         width_difference = origin.innerWidth() - activates.innerWidth();
         gutter_spacing = gutter_spacing * -1;
       }
@@ -176,4 +177,8 @@
 
    });
   }; // End dropdown plugin
+
+  $(document).ready(function(){
+    $('.dropdown-button').dropdown();
+  });
 }( jQuery ));

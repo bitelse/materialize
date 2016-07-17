@@ -13,6 +13,11 @@ Materialize, a CSS Framework based on material design
 Chrome 35+, Firefox 31+, Safari 7+, IE 10+
 
 ## Contributing
+- Compiling Files
+  - `npm install`
+  - `grunt monitor`, this will compile .scss, .js., .jade files
+- Documentation
+  - If you notice an error in the documentation. Please edit the corresponding .html page under jade/page-contents/.
 - Issues
   - If you have an issue please make sure you document the problems in depth. One line issues with no explanations will be closed.
 - Feature Requests
@@ -21,6 +26,14 @@ Chrome 35+, Firefox 31+, Safari 7+, IE 10+
   - Use this [codepen](http://codepen.io/Dogfalo/pen/xbzPQV) to illustrate your problem.
 
 ## Changelog
+- v0.96.0 (Upcoming)
+  - **Toasts, transitions, scrollfire added under Materialize namespace**
+  - Collapsibles supports nesting
+  - Modal Bottom Sheet added
+  - Indeterminate Checkboxes added
+  - Text Inputs supports placeholder/readonly
+  - Better Meteor support
+
 
 - v0.95.3 (Feb 25, 2015)
   - Parallax image loading / responsiveness fixes
